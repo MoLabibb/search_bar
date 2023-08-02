@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    }
+
+
+    input{
+    margin: auto;
+    outline: none;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    background-color: #CCC;
+    padding: .5rem;
+    }
+    ul {
+    list-style-type: none;
+    }
+    ul li {
+    padding: 10px;
+
+    }
+    ul li{
+    border-bottom: 2px solid #CCC;
+    }
+</style>
+    <title>Search Engine</title>
+</head>
+<body>
+   
+    <div class="container">
+        <div class="search">
+            <input class="input" type="text" placeholder="search here">
+        </div>
+
+        <ul>
+            <li>Python</li>
+            <li>C#</li>
+            <li>Java</li>
+            <li>Kotlin </li>
+            <li>C++</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Django</li>
+            <li>Css</li>
+            <li>Html</li>
+            <li>laravel</li>
+            <li>dot net</li>
+            <li>ruby</li>
+            <li>tailwind </li>
+            <li>Bootstrap</li>  
+        </ul>
+    </div>
+    
+    <script>
+        let searchinput = document.querySelector('.input');
+        searchinput.addEventListener('input', filteritems);
+        function filteritems(){
+            const targetItem = searchinput.value.toLowerCase();
+            const itemslist = document.querySelectorAll('li');
+            itemslist.forEach((item)=> {
+            let itemName = item.textContent;
+            if(itemName.toLowerCase().includes(targetItem)){
+            item.style.display = '';
+            }else{
+            item.style.display = 'none' ;
+            }
+            })
+        }
+
+</script>
+</body>
+</html>
